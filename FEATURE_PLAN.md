@@ -86,6 +86,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ## Layout Guardrails
 Restrict DOM writes to the inner menu list so existing wrappers, grids, and ARIA hooks remain untouched. If helper classes are required, reuse current naming to avoid CSS drift. Snapshot the current HTML structure before modifications so regressions can be spotted quickly during review.
-
-## Validation
-TODO
