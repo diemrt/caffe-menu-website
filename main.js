@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.querySelector("[data-menu]");
+  const footer = document.querySelector("[data-footer]");
   if (!container) {
     console.warn("Menu container missing");
     return;
@@ -12,6 +13,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const data = await response.json();
+    if (footer) {
+      const { footerMessage } = data;
+      if (typeof footerMessage === "string" && footerMessage.trim()) {
+        footer.textContent = footerMessage;
+      } else {
+        console.warn("Footer message missing in menu.json");
+      }
+    }
     const sections = Array.isArray(data.sections) ? data.sections : [];
     const fragment = document.createDocumentFragment();
 
