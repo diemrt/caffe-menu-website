@@ -26,8 +26,7 @@
       "title": "SNACKS",
       "items": [
         { "name": "Biscotti Lotus", "price": 0.2 },
-        { "name": "Brioche", "price": 1.4 },
-        { "name": "Patatine", "price": 1.1 }
+        { "name": "Brioche", "price": 1.4 }
       ]
     }
   ]
