@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angolo Caffè Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8E7E4; /* Light pink from image */
+            --text-color: #3E2723; /* Dark brown for text */
+            --header-color: #3E2723; /* Dark brown for menu headers */
+            --line-color: #A1887F; /* Orange brown for separator lines */
+            --accent-color: #795548; /* Medium brown for stars/coffee bean */
+            --footer-text-color: #5D4037; /* Slightly lighter brown for footer */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px; /* Constrain width for mobile-first */
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            position: relative; /* For absolute positioning of decorative elements */
+            overflow: hidden; /* Hide elements that go beyond container */
+        }
+
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif; /* For a more elegant 'MENU' */
+            font-size: 2.8em;
+            color: var(--header-color);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            margin: 5px 0 0;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .header .stars {
+            position: absolute;
+            left: 0;
+            top: 25px;
+            font-size: 1.5em;
+            color: var(--accent-color);
+            line-height: 1;
+            padding-left: 10px;
+        }
+
+        .header .coffee-bean {
+            position: absolute;
+            right: 0;
+            top: 35px;
+            font-size: 2em;
+            color: var(--accent-color);
+            line-height: 1;
+            padding-right: 10px;
+        }
+
+        /* --- Decorative Croissants --- */
+        .croissant-decoration {
+            position: absolute;
+            top: 0px; /* Adjust as needed */
+            right: -50px; /* Move off-screen partly */
+            width: 200px; /* Adjust size */
+            height: auto;
+            opacity: 0.7; /* Make it subtle */
+            z-index: -1; /* Behind content */
+        }
+        @media (min-width: 600px) {
+            .croissant-decoration {
+                width: 300px;
+                right: -80px;
+                top: -20px;
+            }
+        }
+
+
+        /* --- Menu Sections --- */
+        .menu-section {
+            margin-bottom: 40px;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8em;
+            color: var(--header-color);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--line-color);
+            padding-bottom: 5px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .item-name {
+            flex-grow: 1;
+            margin-right: 15px;
+        }
+
+        .item-price {
+            white-space: nowrap; /* Prevent price from wrapping */
+            font-weight: 700;
+        }
+
+        /* --- Decorative Coffee Cup --- */
+        .coffee-cup-decoration {
+            position: absolute;
+            bottom: -50px; /* Adjust as needed */
+            left: -50px; /* Move off-screen partly */
+            width: 180px; /* Adjust size */
+            height: auto;
+            opacity: 0.7; /* Make it subtle */
+            z-index: -1; /* Behind content */
+            transform: rotate(-10deg); /* Slight rotation */
+        }
+        @media (min-width: 600px) {
+            .coffee-cup-decoration {
+                width: 250px;
+                bottom: -80px;
+                left: -80px;
+            }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: var(--footer-text-color);
+            background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
+            margin-top: auto; /* Push to bottom */
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Responsive adjustments for larger screens (if needed, but keeping mobile-first) */
+        @media (min-width: 600px) {
+            .container {
+                max-width: 600px; /* Allow wider on tablets/desktops */
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 3.5em;
+            }
+
+            .header .stars {
+                top: 30px;
+                font-size: 1.8em;
+                left: 20px;
+            }
+            .header .coffee-bean {
+                top: 45px;
+                font-size: 2.5em;
+                right: 20px;
+            }
+
+            .menu-section h2 {
+                font-size: 2em;
+            }
+
+            .menu-item {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Croissant Decoration --><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARUAAADuCAMAAACXN+gJAAAAKlBMVEUAAAD///////////////8AAAD////////////////////////t28gSAAAADXRSTlMAEM9wf68/z/DgoI8/N/QxAAAApUlEQVR42u3BMQEAAADCoPVPbQpfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBdoB6+AAEx2J+KAAAAAElFTkSuQmCC" alt="Croissant" class="croissant-decoration">
+
+        <header class="header">
+            <h1>MENU</h1>
+            <p>ANGOLO CAFFÈ</p>
+            <div class="coffee-bean">☕</div> <!-- Simple emoji for coffee bean --></header>
+
+        <section class="menu-section">
+            <h2>COFFEE</h2>
+            <div class="menu-item">
+                <span class="item-name">Caffè Normale</span>
+                <span class="item-price">€1,00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Caffè Macchiato</span>
+                <span class="item-price">€1,00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Caffè Deca</span>
+                <span class="item-price">€1,50</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Caffè Latte</span>
+                <span class="item-price">€2,00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Cappuccino</span>
+                <span class="item-price">€1,80</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Ginseng</span>
+                <span class="item-price">€1,80</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Orzo</span>
+                <span class="item-price">€1,50</span>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>NON COFFEE</h2>
+            <div class="menu-item">
+                <span class="item-name">Tè Caldo</span>
+                <span class="item-price">€2,00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Cioccolata Calda Classica</span>
+                <span class="item-price">€2,50</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Acqua Naturale 500 ml</span>
+                <span class="item-price">€1,00</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Succo Di Frutta</span>
+                <span class="item-price">€2,50</span>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>SNACKS</h2>
+            <div class="menu-item">
+                <span class="item-name">Biscotti Lotus</span>
+                <span class="item-price">€0,20</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Brioche</span>
+                <span class="item-price">€1,40</span>
+            </div>
+        </section>
+
+        <!-- Coffee Cup Decoration --><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZMAAAHfCAMAAAB9R/FzAAAAKlBMVEUAAAD///////////////8AAAD////////////////////////t28gSAAAADXRSTlMAEM9wf68/z/DgoI8/N/QxAAAAoUlEQVR42u3BMQEAAADCoPVPbQpfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBdoB6+AAEx2J+KAAAAAElFTkSuQmCC" alt="Coffee Cup" class="coffee-cup-decoration">
+    </div>
+
+    <footer class="footer">
+        Aperti dalle 10:00 alle 10:25
+    </footer>
+</body>
+</html>
