@@ -115,6 +115,13 @@
             padding-bottom: 5px;
         }
 
+        .menu-subtitle {
+            margin: 0 0 10px;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
         .menu-item {
             display: flex;
             justify-content: space-between;
@@ -203,69 +210,7 @@
             <p>ANGOLO CAFFÈ</p>
             <div class="coffee-bean">☕</div> <!-- Simple emoji for coffee bean --></header>
 
-        <section class="menu-section">
-            <h2>COFFEE</h2>
-            <div class="menu-item">
-                <span class="item-name">Caffè Normale</span>
-                <span class="item-price">€1,00</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Caffè Macchiato</span>
-                <span class="item-price">€1,00</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Caffè Deca</span>
-                <span class="item-price">€1,50</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Caffè Latte</span>
-                <span class="item-price">€2,00</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Cappuccino</span>
-                <span class="item-price">€1,80</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Ginseng</span>
-                <span class="item-price">€1,80</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Orzo</span>
-                <span class="item-price">€1,50</span>
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2>NON COFFEE</h2>
-            <div class="menu-item">
-                <span class="item-name">Tè Caldo</span>
-                <span class="item-price">€2,00</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Cioccolata Calda Classica</span>
-                <span class="item-price">€2,50</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Acqua Naturale 500 ml</span>
-                <span class="item-price">€1,00</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Succo Di Frutta</span>
-                <span class="item-price">€2,50</span>
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2>SNACKS</h2>
-            <div class="menu-item">
-                <span class="item-name">Biscotti Lotus</span>
-                <span class="item-price">€0,20</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Brioche</span>
-                <span class="item-price">€1,40</span>
-            </div>
-        </section>
+        <div class="menu-sections" data-menu></div>
 
         <!-- Coffee Cup Decoration --><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZMAAAHfCAMAAAB9R/FzAAAAKlBMVEUAAAD///////////////8AAAD////////////////////////t28gSAAAADXRSTlMAEM9wf68/z/DgoI8/N/QxAAAAoUlEQVR42u3BMQEAAADCoPVPbQpfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBdoB6+AAEx2J+KAAAAAElFTkSuQmCC" alt="Coffee Cup" class="coffee-cup-decoration">
     </div>
@@ -273,5 +218,6 @@
     <footer class="footer">
         Aperti dalle 10:00 alle 10:25
     </footer>
+    <script src="main.js" defer></script>
 </body>
 </html>

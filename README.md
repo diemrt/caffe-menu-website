@@ -9,7 +9,7 @@ The entire website is contained within a **single `index.html` file**, making it
 The primary goal was to replicate the provided menu design using the simplest approach possible.
 
 * **Mobile-First:** The layout is designed for a narrow (mobile) screen by default and uses `max-width` to constrain the content for easy readability. It includes a simple media query to adapt slightly for larger screens.
-* **Minimal Code:** No external frameworks, libraries, or JavaScript are used. This ensures the fastest possible load time.
+* **Minimal Code:** No external frameworks or build tooling are used. A single lightweight script renders the menu from `menu.json`, keeping load times fast without sacrificing flexibility.
 * **Single File Deployment:** To make deployment trivial, all CSS is inlined within a `<style>` tag in the `<head>`. Decorative images (croissant, coffee cup) are embedded directly into the HTML as Base64 data, eliminating the need for an `images` folder.
 * **UI/UX Replication:**
     * **Fonts:** Uses Google Fonts (`Montserrat` for body text and `Playfair Display` for the main "MENU" title) to match the style.
@@ -23,14 +23,21 @@ The primary goal was to replicate the provided menu design using the simplest ap
 
 ## Project Structure
 
-The entire project consists of just one file:
+The project consists of the following files:
 
 ```cmd
 \
-└── index.html
+├── index.html
+├── main.js
+├── menu.json
 └── README.md
-
 ```
+
+## Menu Data & Currency
+
+* The canonical source for menu sections, products, and prices is `menu.json`. Each price is stored as a numeric euro value using dot decimals (e.g. `1.8`).
+* Client-side rendering in `main.js` formats prices with `toLocaleString("it-IT", { style: "currency", currency: "EUR" })`, which automatically displays commas for cents while preserving consistent data storage.
+* When editing offline, keep `main.js` referenced in `index.html` because it fetches `menu.json` at runtime. The site can continue to run locally by serving the three files from the same directory.
 
 ## Commit Guide
 

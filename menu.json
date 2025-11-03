@@ -1,0 +1,32 @@
+{
+  "sections": [
+    {
+      "title": "COFFEE",
+      "items": [
+        { "name": "Caffè Normale", "price": 1.0 },
+        { "name": "Caffè Macchiato", "price": 1.0 },
+        { "name": "Caffè Deca", "price": 1.5 },
+        { "name": "Caffè Latte", "price": 2.0 },
+        { "name": "Cappuccino", "price": 1.8 },
+        { "name": "Ginseng", "price": 1.8 },
+        { "name": "Orzo", "price": 1.5 }
+      ]
+    },
+    {
+      "title": "NON COFFEE",
+      "items": [
+        { "name": "Tè Caldo", "price": 2.0 },
+        { "name": "Cioccolata Calda Classica", "price": 2.5 },
+        { "name": "Acqua Naturale 500 ml", "price": 1.0 },
+        { "name": "Succo Di Frutta", "price": 2.5 }
+      ]
+    },
+    {
+      "title": "SNACKS",
+      "items": [
+        { "name": "Biscotti Lotus", "price": 0.2 },
+        { "name": "Brioche", "price": 1.4 }
+      ]
+    }
+  ]
+}
